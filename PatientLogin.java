@@ -15,30 +15,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class PatientLogin
- */
 @WebServlet("/PatientLogin")
 public class PatientLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public PatientLogin() {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pid = request.getParameter("pid");
 		String uname = request.getParameter("uname");
@@ -82,7 +70,7 @@ public class PatientLogin extends HttpServlet {
 			}
 			
 			out.close();
-		}
+	
 		catch (ClassNotFoundException e)
 		{
 			out.println("<script>");
@@ -101,7 +89,9 @@ public class PatientLogin extends HttpServlet {
 			out.println("</script>");
 			out.close();
 			
+			
 			e.printStackTrace();
+			
 		}
 	}
 
